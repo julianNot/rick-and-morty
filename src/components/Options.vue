@@ -1,15 +1,19 @@
 <template>
   <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
+      <li v-for="character in listCharacters" :key="character.id" @click="$emit('select', character.caracter.id)">
+        {{character.caracter.name}}
+      </li>
   </ul>
 </template>
 
 <script>
 export default {
+  props : {
+    listCharacters : {
+      type : Array,
+      required : true
+    }
+  }
 
 }
 </script>
