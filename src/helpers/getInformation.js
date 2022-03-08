@@ -1,7 +1,7 @@
 import getApi from "../api/axios"
 
 const petitionsAPI = () => {
-    const list = Array.from(Array(300))
+    const list = Array.from(Array(500))
     const listIndexs = list.map( (_,index) => index + 1 )
     return listIndexs
 }

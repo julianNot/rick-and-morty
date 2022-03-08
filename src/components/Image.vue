@@ -5,10 +5,7 @@
 <script>
 export default {
     props : {
-        number : {
-            type : Number,
-            required : true
-        }
+        number : null,
     },
     methods : {
         getUrlImage(){

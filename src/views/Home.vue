@@ -1,6 +1,6 @@
 <template>
   <h1>Rick And Morty Trivia</h1>
-  <Image :number="200"/>
+  <Image :number="numberImg"/>
   <options :listCharacters="listOptions" @select="listeEventSelect"/>
 </template>
 
@@ -19,6 +19,7 @@ export default {
         return {
             listOptions : [],
             answer : Object,
+            numberImg : Number,
         }
     }, 
     methods : {
@@ -28,15 +29,25 @@ export default {
             const number = Math.floor( Math.random() * 5)
 
             this.answer = this.listOptions[number]
+
+            this.numberImg = this.answer.caracter.id
+
             console.log(this.answer.caracter.name);
-            console.log(this.listOptions);
         },
         listeEventSelect(id){
             if (this.answer.caracter.id == id){
                 console.log('Correcto!');
+                alert('Correcto')
             }else {
                 console.log('Incorrecto :(');
+                alert('Incorrecto :/')
             }
+            
+            this.nextCharacter()
+        },
+        async nextCharacter(){
+            this.message = null
+            await this.getFourCharacters()
         }
     },
     mounted(){
