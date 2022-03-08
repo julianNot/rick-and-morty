@@ -1,4 +1,6 @@
 # rick-and-morty
+Trivia con API de Rick y Morty 
+* Conceptos basicos de Componentes (propiedades, eventos)
 
 ## Project setup
 ```
